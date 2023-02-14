@@ -10,34 +10,33 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class VinylController extends AbstractController
 {
-    #[Route('/')]
+    #[Route('/', name: 'app_homepage')]
     public function homepage(): Response
     {
         $tracks = [
-            ['song' => 'Hello', 'artist' => 'Jake'],
+            ['song' => 'Help', 'artist' => 'Jake'],
             ['song' => 'The Broom', 'artist' => 'Agent 16'],
             ['song' => 'Comin\' Up', 'artist'  => 'The Runners'],
             ['song' => 'Down', 'artist' => 'Players of The Game'],
         ];
 
 
-
-
         return $this->render('vinyl/homepage.html.twig', [
             'title' => 'Zach\'s Monster Playlist',
             'tracks' => $tracks,
         ]);
+
     }
 
-
-    #[Route('/browse/{slug}')]
+    #[Route('/browse/{slug}', name: 'app_browse')]
     public function browse(string $slug = null): Response
     {
-        if ($slug){
-            $title = 'Genre: '.u(str_replace('-', ' ', $slug))->title(true);
-        }  else  {
-              $title = 'All Genres';
-        }
-        return new Response($title);
+
+        $genre = $slug ? u(str_replace('-', ' ', $slug))->title(true) : null;
+
+        return $this->render('vinyl/browse.html.twig', [
+
+            'genre' => $genre
+        ]);
     }
 }
