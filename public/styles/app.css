@@ -1,8 +1,11 @@
+@import '~bootstrap';
+
 body {
-    background-color: #17242C;
+    background-color: goldenrod !important;
     color: #fff;
     font-family: 'Roboto Condensed', sans-serif;
 }
+
 
 .song-list i {
     margin-top: 7px;
