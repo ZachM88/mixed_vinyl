@@ -1,4 +1,5 @@
 import './styles/app.css';
+import './bootstrap';
 
 function webpackContext(req) {
 	var id = webpackContextResolve(req);
@@ -19,4 +20,4 @@ webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
 webpackContext.id = "./assets/controllers sync recursive ./node_modules/@symfony/stimulus-bridge/lazy-controller-loader.js! \\.[jt]sx?$";
 
-console.log('hello');
+console.log('hello world');
