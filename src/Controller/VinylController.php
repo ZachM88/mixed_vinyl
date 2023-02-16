@@ -36,7 +36,7 @@ class VinylController extends AbstractController
 
         return $this->render('vinyl/browse.html.twig', [
 
-            'genre' => $genre
+            'genre' => $genre,
         ]);
     }
 }
