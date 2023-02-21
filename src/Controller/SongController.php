@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controller;
 
 use Psr\Log\LoggerInterface;
@@ -16,7 +15,8 @@ class SongController extends AbstractController
     {
         $song = [
             'id' => $id,
-            'name' => 'happy',
+            'name' => 'Help',
+            'url' => 'https://symfonycasts.s3.amazonaws.com/sample.mp3',
         ];
 
 

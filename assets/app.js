@@ -1,6 +1,7 @@
 import './styles/app.css';
 import './bootstrap';
 
+
 function webpackContext(req) {
 	var id = webpackContextResolve(req);
 	return __webpack_require__(id);

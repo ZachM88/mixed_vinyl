@@ -14,12 +14,14 @@ export default class extends Controller {
         infoUrl: String
     }
 
-    play(event)  {
-        event.preventDefault();
+    play(event) {
+        event.preventDefault()
 
-        console.log(this.infoUrlValue);
-        //axios.get('')
-
+        axios.get(this.infoUrlValue)
+            .then((response) => {
+                const audio = new Audio(response.data.url);
+                audio.play();
+            });
 
     }
 }
